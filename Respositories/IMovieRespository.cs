@@ -1,9 +1,8 @@
-using System.Collections.Generic;
 using MovieMagic.Models;
 
 namespace MovieMagic.Repositories
 {
-    public interface IMovieRespository
+    public interface IMovieRepository
     {
         IEnumerable<Movie> GetAllMovies();
         Movie GetMovieById(int movieId);

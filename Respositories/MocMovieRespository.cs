@@ -2,14 +2,14 @@ using MovieMagic.Models;
 
 namespace MovieMagic.Repositories
 {
-    public class MockMovieRepository : IMovieRespository
+    public class MockMovieRepository : IMovieRepository
     {
           private List<Movie> mockMovies;
           public MockMovieRepository()
           {
             mockMovies = new List<Movie>
             {
-            new Movie { MovieId =1, Name = "Cars", Rating = 4},
+            new Movie { MovieId =1, Name = "Up", Rating = 4},
             new Movie { MovieId =2, Name = "Jurasic Park", Rating = 5},
             new Movie { MovieId =3, Name = "Back to the Future", Rating = 3},
 
@@ -50,7 +50,7 @@ namespace MovieMagic.Repositories
             movie.Name = newMovie.Name;
             movie.Rating = newMovie.Rating;
             }
-            return newMovie;
+            return movie;
         }
     }
 }
