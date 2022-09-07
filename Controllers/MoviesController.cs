@@ -35,7 +35,7 @@ public class MoviesController : ControllerBase
     }
 
 // Rate Movies              PUT /movies/{id}
- [HttpPut,  Route("{movieId:int}")]
+ [HttpPut,  Route("{movieId}")]
     public Movie UpdateMovie(Movie movie)
     {
         if (movie == null || !ModelState.IsValid){
@@ -46,8 +46,8 @@ public class MoviesController : ControllerBase
         return newMovie;
     }
 // Remove Movie             DELETE /movies {id}
-[HttpDelete,  Route("{movieId:int}")]
-public void DeleteMovie(int movieId){
+[HttpDelete,  Route("{movieId}")]
+public void DeleteMovie(string movieId){
     _movieRepository.DeleteMovie(movieId);
     Response.StatusCode = (int) HttpStatusCode.NoContent;
 }
@@ -59,8 +59,8 @@ public void DeleteMovie(int movieId){
     }
 
     // Get individual Movie     GET /movies/{id}
-     [HttpGet, Route("{movieId:int}")]
-    public Movie GetMovieById(int movieId)
+     [HttpGet, Route("{movieId}")]
+    public Movie GetMovieById(string movieId)
     {
         var movie =_movieRepository.GetMovieById(movieId);
       
